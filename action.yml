@@ -1,4 +1,4 @@
-name: "GitHub Docker Action"
+name: "GitHub Docker Action Testing"
 description: "Just Temp For Testing"
 inputs:
   accessToken:
