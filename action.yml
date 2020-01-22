@@ -1,5 +1,5 @@
 name: "GitHub Docker Action"
-description: "Build and publish your repository as a Docker image and push it to GitHub Package Registry in one step"
+description: "Just Temp For Testing"
 inputs:
   accessToken:
     description: "GitHub Repository Token to log in using."
