@@ -702,9 +702,9 @@ async function run() {
         }
     }
     let imageTagPrefix = core.getInput('imageTagPrefix', { required: false });
-    if (imageTagPrefix) imageName = imageTagPrefix + imageName;
+    if (imageTagPrefix) imageTag = imageTagPrefix + imageTag;
     let imageTagSuffix = core.getInput('imageTagSuffix', { required: false });
-    if (imageTagSuffix) imageName = imageName + imageTagSuffix;
+    if (imageTagSuffix) imageTag = imageTag + imageTagSuffix;
 
     // Set some variables.
     const imageURL = `docker.pkg.github.com/${repository}/${imageName}:${imageTag}`
