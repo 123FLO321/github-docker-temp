@@ -705,6 +705,10 @@ async function run() {
     if (imageTagPrefix) imageTag = imageTagPrefix + imageTag;
     let imageTagSuffix = core.getInput('imageTagSuffix', { required: false });
     if (imageTagSuffix) imageTag = imageTag + imageTagSuffix;
+      
+    // Process the Dockerfile name
+    let dockerfile = core.getInput('dockerfile', { required: false });
+    if (!dockerfile) dockerfile = 'Dockerfile';
 
     // Set some variables.
     const imageURL = `docker.pkg.github.com/${repository}/${imageName}:${imageTag}`
@@ -712,7 +716,7 @@ async function run() {
     // Build the Docker image.
     await exec.exec(
       `docker`,
-      ['build', '--tag', imageURL, workspace]);
+      ['build', '--tag', imageURL, '--file', dockerfile, ,workspace]);
 
     // Push the Docker image.
     await exec.exec(
