@@ -716,7 +716,7 @@ async function run() {
     // Build the Docker image.
     await exec.exec(
       `docker`,
-      ['build', '--tag', imageURL, '--file', dockerfile, ,workspace]);
+      ['build', '--tag', imageURL, '--file', dockerfile, workspace]);
 
     // Push the Docker image.
     await exec.exec(
